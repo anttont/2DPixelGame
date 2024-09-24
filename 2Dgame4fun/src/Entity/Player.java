@@ -76,7 +76,7 @@ public class Player extends Entity{
             gp.cChecker.checkTile(this);
 
             //If collision == false, player can move
-            if(collisionOn == false){
+            if(!collisionOn){
 
                 switch (direction){
                     case "up":
