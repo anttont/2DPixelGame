@@ -25,6 +25,8 @@ public class Player extends Entity{
         //player hitbox
         solidArea = new Rectangle(8, 16, 32, 32);
 
+        solidAreaDefaultX = solidArea.x;
+        solidAreaDefaultY = solidArea.y;
         setDefaultValues();
         getPlayerImage();
     }
@@ -75,6 +77,9 @@ public class Player extends Entity{
             collisionOn = false;
             gp.cChecker.checkTile(this);
 
+            int objIndex = gp.cChecker.checkObject(this, true);
+            pickUpObject(objIndex);
+
             //If collision == false, player can move
             if(!collisionOn){
 
@@ -106,6 +111,13 @@ public class Player extends Entity{
         }
 
 
+    }
+
+    public void pickUpObject(int i){
+
+        if(i != 999) {
+            gp.obj[i] = null;
+        }
     }
 
     public void draw(Graphics2D g2) {
