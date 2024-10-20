@@ -27,6 +27,7 @@ public class Player extends Entity{
 
         solidAreaDefaultX = solidArea.x;
         solidAreaDefaultY = solidArea.y;
+
         setDefaultValues();
         getPlayerImage();
     }
